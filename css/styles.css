@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 0.7em;
+}
+
+/* Color Variables */
+
+/* 
+Lavender #7477bf
+Purple #4d4c72
+Green #81c98f
+Teal #74b1bf
+Gray #b2b2b2
+*/
+
+/* Main Grid Container */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main";
+}
+
+/* Header Styles */
+
+header {
+    background-color: #7477bf;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: white;
+}
+
+header h1 {
+    padding: 5px 0px;
+}
+
+header h1 sup {
+    font-size: 0.3em;
+    vertical-align: 1.1em;
+}
+
+#notification-bell {
+    margin-left: auto;
+    margin-right: 10px;
+    border-right: 1px solid black;
+    padding: 10px 20px 10px 0;
+}
+
+#profile-img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 5px 0px;
+}
+
+header h3 {
+    padding: 10px 5px;
+}
+
+
+/* Navigation Styles */
+
+nav {
+    background-color: #4d4c72;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    height: 60px;
+}
+
+#dashboard-icon {
+    background: url("/icons/icon-dashboard.svg");
+}
+#member-icon {
+    background: url("/icons/icon-members.svg");
+}
+#visits-icon {
+    background: url("/icons/icon-visits.svg");
+}
+#settings-icon {
+    background: url("/icons/icon-settings.svg");
+}
+
+
+/* Main Dashboard Styles */
+
+main {
+    background-color: white;
+    grid-area: main;
+}
+
+.dashboard-container {
+    display: grid;
+}
+
+.widget-container-full, .widget-container-half {
+    width: 95vw;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas:
+            "header header"
+            "nav main";
+    }
+
+    .dashboard-container {
+        grid-template-columns: 50%;
+    }
+
+    .dashboard-header,
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;
+    }
+
+    .daily-traffic,
+    .new-members,
+    .messagfe-user {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile-users,
+    .recent-activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+
+    .widget-container-full {
+        width: 90vw;
+    }
+    
+    .widget-container-half {
+        width: 45vw;
+    }
+}
+
+
+
