@@ -18,10 +18,10 @@ body {
 /* Color Variables */
 
 /* 
-Lavender #7477bf
+Lavender #7477BF
 Purple #4d4c72
-Green #81c98f
-Teal #74b1bf
+Green #78CF82
+Teal #51B6C8
 Gray #b2b2b2
 */
 
@@ -49,14 +49,17 @@ Gray #b2b2b2
 
 .dbgrid-container {display: grid;}
 
-.widget-container-full, .widget-container-half {width: 95vw;}
+.widget-container-full, .widget-container-half {
+    width: 95vw;
+    padding-left: 20px;
+}
 
 /* ----------------------------*/
 /* Header Styles */
 /* ----------------------------*/
 
 header {
-    background-color: #7477bf;
+    background-color: #7477BF;
     display: flex;
     flex: row nowrap;
     justify-content: flex-end;
@@ -189,16 +192,25 @@ main h3 {
 
 #alert {
     width: 100%;
-    background-color: lavender;
-    padding: 5%;
+    padding: 2%;
 }
 
+.alert-banner {
+    background-color: #7477BF;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 2%;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
 /* Trafffic Chart Section Styles*/
 
 .dbgrid-traffic ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    margin-right: 20px;
 }
 
 .dbgrid-traffic ul li {
@@ -210,7 +222,7 @@ main h3 {
 }
 
 .dbgrid-traffic ul li:hover {
-    background-color: #81c98f;
+    background-color: #78CF82;
     color: white;
 }
 
@@ -237,7 +249,7 @@ main h3 {
     height: 50px;
     margin: 4% 0;
     padding: 4%;
-    background-color:  #7477bf;
+    background-color:  #7477BF;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -253,7 +265,7 @@ main h3 {
 }
 
 .social-text p:first-of-type {
-    color: #7477bf;
+    color: #7477BF;
     font-size: 1.4em;
 }
 
@@ -290,7 +302,7 @@ main h3 {
 }
 
 .new-member-row a {
-    color: #7477bf;
+    color: #7477BF;
     font-size: 0.9em;
 }
 
@@ -346,7 +358,7 @@ main h3 {
 
 .dbgrid-message button,
 .button-primary {
-    background-color: #7477bf;
+    background-color: #7477BF;
 }
 
 .button-disabled {
@@ -516,7 +528,7 @@ main h3 {
 
 /* 1024px Media Query */
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     header {
         padding: 0vw 3vw;
     }

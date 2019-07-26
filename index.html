@@ -57,7 +57,7 @@
         <section class="dbgrid-mobile">
             <h3>Mobile Users</h3>
             <div class="widget-container-half">
-                <canvas id="mobile-donut"></canvas>
+                <canvas id="mobile-chart"></canvas>
             </div>
         </section>
 
@@ -179,10 +179,10 @@
 
         <section class="dbgrid-message">
             <h3>Message User</h3>
-            <form>
-                <input placeholder="Search for User">
-                <textarea placeholder="Message for User"></textarea>
-                <button type="submit">Send</button>
+            <form class="widget-container">
+                <input type="text" placeholder="Search for User" class="form-field" id="userField">
+                <textarea placeholder="Message for User" class="form-area" id="messageField"></textarea>
+                <button class="button-primary" id="send">Send</button>
             </form> 
         </section>
 
@@ -226,6 +226,7 @@
         
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
 </body>
