@@ -12,7 +12,6 @@ h1, h2, h3, h4, h5, h6 {
 body {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 0.7em;
-    min-width: 320px;
 }
 
 /* Color Variables */
@@ -32,6 +31,8 @@ Gray #b2b2b2
 /* Outer Grid */
 
 .grid-container {
+    min-width: 320px;
+    max-width: 1024px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -84,6 +85,11 @@ header h1 sup {
     padding-right: 2%;
     height: 8vw;
     width: 7vw;
+    opacity: 0.8;
+}
+
+#notification-bell:hover {
+    opacity: 1;
 }
 
 #notification-bell img {
@@ -91,6 +97,35 @@ header h1 sup {
     width: 100%;
     max-height: 50px;
     max-width: 40px;
+}
+
+#notifications {
+    display: none;
+    position: relative;
+    right: 75px;
+    background-color: whitesmoke;
+    border: 1px solid gray;
+    color: black;
+    width: 200px;
+}
+.notification-item {
+    border-bottom: 1px solid gray;
+    background-color: whitesmoke;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.notification-item:hover {
+    background-color: white;
+}
+
+
+#notifications p {
+    display: inline-block;
+}
+
+#notifications span {
+    float: right;
 }
 
 #profile-img {
@@ -125,24 +160,35 @@ nav a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%, 100%;
+    opacity: 0.8;
 }
 #member-icon {
     background: url("../icons/icon-members.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%, 100%;
+    opacity: 0.8;
 }
 #visits-icon {
     background: url("../icons/icon-visits.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%, 100%;
+    opacity: 0.8;
 }
 #settings-icon {
     background: url("../icons/icon-settings.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%, 100%;
+    opacity: 0.8;
+}
+
+#dashboard-icon:hover,
+#member-icon:hover,
+#visits-icon:hover,
+#settings-icon:hover {
+    opacity: 1.0;
 }
 
 /* ----------------------------*/
@@ -203,6 +249,10 @@ main h3 {
     padding: 1% 2%;
     border-radius: 5px;
     font-size: 1.2em;
+}
+
+.alert-banner-close {
+    cursor: pointer;
 }
 /* Trafffic Chart Section Styles*/
 
@@ -529,6 +579,10 @@ main h3 {
 /* 1024px Media Query */
 
 @media (min-width: 1024px) {
+    body {
+        background-color: whitesmoke;
+    }
+    
     header {
         padding: 0vw 3vw;
     }

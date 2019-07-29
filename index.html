@@ -14,14 +14,24 @@
         <h1><strong>Your</strong>App<sup>TM</su></h1>
         <div id="notification-bell">
             <img src="icons/icon-bell.svg" alt="notification bell icon" height="20px" wdith="20px">
-            <div id="notifications"></div>
+            <div id="notifications">
+                <div class="notification-item">
+                    <p>You have unread messages</p><span class="notification-item-close">X</span>
+                </div>
+                <div class="notification-item">
+                    <p>Dawn viewed your profile</p><span class="notification-item-close">X</span>
+                </div>
+                <div class="notification-item">
+                    <p>We made updates to our site!</p><span class="notification-item-close">X</span>
+                </div>
+            </div>
         </div>
         <img id="profile-img" src="images/member-1.jpg">
         <h3>Victoria Chambers</h3>
     </header>
     
     <nav class="grid-nav">
-        <a id="dashboard-icon" href="#"></a>
+        <a class="active-icon" id="dashboard-icon" href="#"></a>
         <a id="member-icon" href="#"></a>
         <a id="visits-icon" href="#"></a>
         <a id="settings-icon" href="#"></a>
@@ -36,11 +46,11 @@
 
         <section class="dbgrid-traffic">
             <h3>Traffic</h3>
-            <ul>
-                <li>Hourly</li>
-                <li>Daily</li>
-                <li>Weekly</li>
-                <li>Montlhy</li>
+            <ul id="chart-selection">
+                <li class="chart-option">Hourly</li>
+                <li class="chart-option">Daily</li>
+                <li class="chart-option">Weekly</li>
+                <li class="chart-option">Monthly</li>
             </ul>
             <div class="widget-container-full">
                 <canvas id="traffic-chart"></canvas>
