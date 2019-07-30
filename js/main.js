@@ -206,9 +206,37 @@ send.addEventListener('click', () => {
 });
 
 
-/* const userOptions = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver']
-const userFieldText = document.getElementById('userField').value
+/* Search User Auto Complete JQuery */
 
-const autocomplete = (input, array) => {
+let users = ["Dale Byrd", "Victoria Chambers", "Dawn Wood", "Dan Oliver"];
 
-} */
+$(function () {
+    $("#userField").autocomplete({
+        source: users
+    });
+});
+
+/* Saving Setttings to Local Storage */
+
+//Settings to Save = Email Notifications? - yes or no, Profile is Public? - public or private, Time Zone Selection - value
+
+const emailNotification = document.getElementById('email-notification');
+const profileView = document.getElementById('profile-view');
+const timeZone = document.getElementById('timezone');
+const saveBtn = document.getElementById('save');
+const cancelBtn = document.getElementById('cancel');
+
+// Function to save settings to local storage
+
+saveBtn.addEventListener('click', () => {
+    emailNotification
+})
+
+// Function to retrieve settings from local storage
+
+
+// Function to set retrieved settings
+
+localStorage.setItem('emailNotification', 'yes')
+localStorage.setItem('profileView', 'public')
+localStorage.setItem('timeZone', 'VALUE')
