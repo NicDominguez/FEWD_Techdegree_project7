@@ -218,25 +218,59 @@ $(function () {
 
 /* Saving Setttings to Local Storage */
 
-//Settings to Save = Email Notifications? - yes or no, Profile is Public? - public or private, Time Zone Selection - value
+// Retriving local storage values
+const userEmailSetting = localStorage.getItem('emailSetting');
+const userProfileSetting = localStorage.getItem('profileSetting');
+const userTimezoneSetting = localStorage.getItem('timezone');
 
-const emailNotification = document.getElementById('email-notification');
-const profileView = document.getElementById('profile-view');
-const timeZone = document.getElementById('timezone');
+// DOM ELEMENTS
 const saveBtn = document.getElementById('save');
 const cancelBtn = document.getElementById('cancel');
+const emailCheckbox = document.getElementById('emailNotification');
+const profileCheckbox = document.getElementById('profileView');
+const timeZoneSelect = document.getElementById('timezone');
 
-// Function to save settings to local storage
+// Functions to save to,  retreive settings from local storage or set defaults
 
-saveBtn.addEventListener('click', () => {
-    emailNotification
-})
+function defaultSettings() {
+    emailCheckbox.checked = false
+    profileCheckbox.checked = false
+    timeZoneSelect.value = timeZoneSelect.childNodes[0]
+}
 
-// Function to retrieve settings from local storage
+function saveSetttings () {
+    localStorage.setItem('emailSetting', emailCheckbox.checked);
+    localStorage.setItem('profileSetting', profileCheckbox.checked);
+    localStorage.setItem('timezone', timeZoneSelect.value);
+}
+
+function retrieveSettings() {
+    if (userEmailSetting !== null) {
+        emailCheckbox.checked = (userEmailSetting === 'true');
+    }
+    if (userProfileSetting !== null) {
+        profileCheckbox.checked = (userProfileSetting === 'true');
+    }
+    if (userTimezoneSetting !== null) {
+        timeZoneSelect.value = userTimezoneSetting;
+    }
+};
+
+// Local Storage Events
+
+document.addEventListener('DOMContentLoaded', function () {
+    retrieveSettings();
+});
+
+saveBtn.addEventListener('click', function () {
+    saveSetttings()
+});
+
+cancelBtn.addEventListener('click', function () {
+    defaultSettings()
+    localStorage.clear()
+});
 
 
-// Function to set retrieved settings
 
-localStorage.setItem('emailNotification', 'yes')
-localStorage.setItem('profileView', 'public')
-localStorage.setItem('timeZone', 'VALUE')
+

@@ -429,7 +429,7 @@ main h3 {
     color: white;
     border-radius: 5px;
     border: none;
-    margin: 2.5% 5%;
+    margin: 1% 5%;
     height: 3em;
 }
 
@@ -448,18 +448,16 @@ main h3 {
 
 .switch-light {
     display: flex;
-    padding: 10px 20px;
+    justify-content: space-between;
+    margin: 3% 5%;
 }
 
-.switch-light strong {
-    width: 160px;
-    margin-right: 20px;
+.switch-light > span, 
+.switch-ios > span {
+    align-self: flex-end;
+    width: 100px;
+    padding: 0;
 }
-
-.switch-light span:first-of-type {
-
-}
-
 
 /* ----------------------------*/
 /* Media Queries */

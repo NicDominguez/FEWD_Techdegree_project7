@@ -200,28 +200,26 @@
         <section class="dbgrid-settings">
             <h3>Settings</h3>
             <form>
-                <label class="switch-light switch-material" onclick="">
-                    <input type="checkbox" id="email-notification">
-                    <strong>
+                <div class="toggle-wrap">
+                    <label class="switch-light switch-ios" onclick="">
+                        <input type="checkbox" id="emailNotification" name="email-setting">
                         Send Email Notifications
-                    </strong>
-                    <span>
-                        <span>Off</span>
-                        <span>On</span>
-                        <a></a>
-                    </span>
-                </label>
-                <label class="switch-light switch-material" onclick="">
-                    <input type="checkbox" id="profile-view">>
-                    <strong>
+                        <span id="toggle-notification">
+                            <span>Off</span>
+                            <span>On</span>
+                            <a></a>
+                        </span>
+                    </label>
+                    <label class="switch-light switch-ios" onclick="">
+                        <input type="checkbox" id="profileView" name="profile-setting">
                         Set Profile to Public
-                    </strong>
-                    <span>
-                        <span>Off</span>
-                        <span>On</span>
-                        <a></a>
-                    </span>
-                </label>
+                        <span id="toggle-profile">
+                            <span>Off</span>
+                            <span>On</span>
+                            <a></a>
+                        </span>
+                    </label>
+                </div>
                 <select class="form-field" id="timezone">
                     <option disabled selected>Select Timezone</option>
                     <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
@@ -229,7 +227,7 @@
                     <option value="-10:00">(GMT -10:00) Hawaii</option>
                     <option value="-09:50">(GMT -9:30) Taiohae</option>
                     <option value="-09:00">(GMT -9:00) Alaska</option>
-                    <option value="-08:00" selected="selected">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                    <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
                     <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
                     <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
                     <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
