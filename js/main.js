@@ -1,6 +1,36 @@
-/* Alert Message */
+/* Global Variables */
+
+const notificationBell = document.getElementById("notification-bell")
+const notifications = document.getElementById("notifications")
+const notificationDot = document.getElementById("notification-dot")
 
 const alertBox = document.getElementById("alert");
+
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
+/* Notifications */
+
+notificationBell.addEventListener('mouseover', e => {
+    notifications.style.display = "block"
+});
+
+notificationBell.addEventListener('mouseout', e => {
+    notifications.style.display = "none"
+});
+
+notifications.addEventListener('click', e => {
+    const element = e.target;
+    if (element.classList.contains("notification-item-close")) {
+        element.parentNode.parentNode.removeChild(element.parentNode)
+    }
+    if (notifications.childElementCount === 0) {
+        notificationDot.style.display = 'none'
+    }
+});
+
+/* Alert Message */
 
 let alertMessage =    
     '<div class="alert-banner">' +
@@ -11,29 +41,9 @@ let alertMessage =
 alertBox.innerHTML = alertMessage;
 
 alertBox.addEventListener('click', e => {
-    const element = e.target;
+    let element = e.target;
     if (element.classList.contains("alert-banner-close")) {
         alertBox.style.display = "none"
-    }
-});
-
-/* Notification Item */
-
-const notificationBell = document.getElementById("notification-bell")
-const notifications = document.getElementById("notifications")
-
-notificationBell.addEventListener('mouseover', e => {
-        notifications.style.display = "block"
-});
-
-notificationBell.addEventListener('mouseout', e => {
-    notifications.style.display = "none"
-});
-
-notifications.addEventListener('click', e => {
-    const element = e.target;
-    if (element.classList.contains("notification-item-close")) {
-        element.parentNode.style.display = "none"
     }
 });
 
@@ -187,10 +197,6 @@ let mobileChart = new Chart(mobileCanvas, {
 });
 
 /* Messdage Section */
-
-const user = document.getElementById("userField");
-const message = document.getElementById("messageField");
-const send = document.getElementById("send");
 
 send.addEventListener('click', () => {
     // check to see if message fields are filled out
