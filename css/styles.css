@@ -63,7 +63,7 @@ Gray #b2b2b2
 header {
     background-color: #7477BF;
     display: flex;
-    flex: row nowrap;
+    flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
     padding: 2vw 4vw;

@@ -1,8 +1,8 @@
 /* Global Variables */
 
-const notificationBell = document.getElementById("notification-bell")
-const notifications = document.getElementById("notifications")
-const notificationDot = document.getElementById("notification-dot")
+const notificationBell = document.getElementById("notification-bell");
+const notifications = document.getElementById("notifications");
+const notificationDot = document.getElementById("notification-dot");
 
 const alertBox = document.getElementById("alert");
 
@@ -13,20 +13,20 @@ const send = document.getElementById("send");
 /* Notifications */
 
 notificationBell.addEventListener('mouseover', e => {
-    notifications.style.display = "block"
+    notifications.style.display = "block";
 });
 
 notificationBell.addEventListener('mouseout', e => {
-    notifications.style.display = "none"
+    notifications.style.display = "none";
 });
 
 notifications.addEventListener('click', e => {
     const element = e.target;
     if (element.classList.contains("notification-item-close")) {
-        element.parentNode.parentNode.removeChild(element.parentNode)
+        element.parentNode.parentNode.removeChild(element.parentNode);
     }
     if (notifications.childElementCount === 0) {
-        notificationDot.style.display = 'none'
+        notificationDot.style.display = 'none';
     }
 });
 
@@ -43,7 +43,7 @@ alertBox.innerHTML = alertMessage;
 alertBox.addEventListener('click', e => {
     let element = e.target;
     if (element.classList.contains("alert-banner-close")) {
-        alertBox.style.display = "none"
+        alertBox.style.display = "none";
     }
 });
 
@@ -111,15 +111,15 @@ let trafficChart = new Chart(trafficCanvas, {
     options: trafficOptions
 });
 
-const chartSelection = document.getElementById("chart-selection")
-let selectedChart = ""
-let selectedData = ""
+const chartSelection = document.getElementById("chart-selection");
+let selectedChart = "";
+let selectedData = "";
 
 chartSelection.addEventListener('click', e => {
     const element = e.target;
     if (element.classList.contains("chart-option")) {
-        selectedChart = element.innerText
-        selectedData = "traffic" + selectedChart
+        selectedChart = element.innerText;
+        selectedData = "traffic" + selectedChart;
 
         trafficChart = new Chart(trafficCanvas, {
             type: 'line',
@@ -239,9 +239,9 @@ const timeZoneSelect = document.getElementById('timezone');
 // Functions to save to,  retreive settings from local storage or set defaults
 
 function defaultSettings() {
-    emailCheckbox.checked = false
-    profileCheckbox.checked = false
-    timeZoneSelect.value = timeZoneSelect.childNodes[0]
+    emailCheckbox.checked = false;
+    profileCheckbox.checked = false;
+    timeZoneSelect.value = timeZoneSelect.childNodes[0];
 }
 
 function saveSetttings () {
@@ -269,12 +269,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 saveBtn.addEventListener('click', function () {
-    saveSetttings()
+    saveSetttings();
 });
 
 cancelBtn.addEventListener('click', function () {
-    defaultSettings()
-    localStorage.clear()
+    defaultSettings();
+    localStorage.clear();
 });
 
 
